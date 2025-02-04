@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Stock Prediction</h1>
+    
+    {% if error_message %}
+        <p style="color: red;">{{ error_message }}</p>  <!-- Display the error message -->
+    {% else %}
+        <h2>Prediction for {{ symbol|upper }}</h2>
+        <p>The predicted next day's closing price is: {{ prediction }}</p>
+    {% endif %}
+    
+    <a href="/">Go Back</a>
+</body>
+</html>
